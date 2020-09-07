@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'di/get_it.dart' as getIt;
+import 'package:pedantic/pedantic.dart';
 
 void main() {
+  unawaited(getIt.init());
   runApp(MyApp());
 }
 
