@@ -1,5 +1,4 @@
 import 'package:movie_app/data/core/api_call.dart';
-
 import 'package:movie_app/data/models/movie_model.dart';
 import 'package:movie_app/data/models/movies_result_model.dart';
 
