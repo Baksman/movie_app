@@ -10,6 +10,7 @@ import 'package:movie_app/domain/usecases/get_popular.dart';
 import 'package:movie_app/domain/usecases/get_trending.dart';
 import 'package:movie_app/presentation/blocs/movie_backdrop/movie_backdrop_bloc.dart';
 import 'package:movie_app/presentation/blocs/movie_carousel/movie_carousel_bloc.dart';
+import 'package:movie_app/presentation/blocs/movie_tabbed/movie_tabbed_bloc.dart';
 
 final getItInstance = GetIt.I;
 
@@ -31,6 +32,9 @@ Future init() async {
       () => MovieRepositoryImpl(getItInstance()));
   getItInstance.registerFactory(() => MovieCarouselBloc(
       getTrending: getItInstance(), movieBackdropBloc: getItInstance()));
-
+  getItInstance.registerFactory(() => MovieTabbedBloc(
+      getPopular: getItInstance(),
+      getComingSoon: getItInstance(),
+      getPlayingNow: getItInstance()));
   getItInstance.registerLazySingleton(() => MovieBackdropBloc());
 }
